@@ -1,0 +1,61 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>New Products</title>
+        <meta name="description" content="form to add new product">
+        <meta name="author" content="Alberto Paros">
+        <link href="{{host}}/style.css" type="text/css" rel="stylesheet" />
+        <script type="module" src="/main.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Add new product</h1>
+            <a href="/logout">Log out</a>
+            <a href="/">Home</a>
+        </header>
+        <main>
+           
+            <form action="/new" method="post" enctype="multipart/form-data">
+                <p>
+                    <label for="time">Borrowing Time:</label>
+                    <select id="time" name="time" type="category" required autofocus>
+                    <option value="24">24 Hours</option>
+                    <option value="1">1 Week</option>
+                    <option value="2">2 Weeks</option>
+                    <option value="4">1 Month</option>
+                    </select>
+                </p>
+                 {{#if authorised}}
+                <p>Logged in as <strong>{{authorised}}</strong></p>
+                {{/if}}
+                <p>
+                    <label for="bookName">Name of book: </label>
+                    <input type="text" name="bookName" placeholder="Enter book name" required autofocus>
+                </p>
+                <p>
+                    <label for="author">Main Author: </label>
+                    <input type="text" name="author" placeholder="Enter main author" required autofocus>
+                </p>
+                <p>
+                    <label for="ISBN">ISBN-13 number:</label>
+                    <input type="text" name="ISBN" placeholder="ISBN number here" ></textarea>
+                </p>
+                <p>
+                    <label for="quantity">Quantity:</label>
+                    <input type="range" id="Quantity" name="quantity" min="1" max="10" required>
+                    <output name="quan_val">5</output>
+                </p> 
+                <p>
+                    <input type="file" id="avatar" name="avatar" accept="image/*"/>
+                    <label for="avatar">Chose your file</label>
+                    <img src="avatar.png" />
+                </p>
+
+                
+                <p><input type="submit" value="Add Product"></p>
+            </form>
+        </main>
+    </body>
+</html>

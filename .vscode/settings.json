@@ -1,0 +1,35 @@
+{
+  "deno.enable": true,
+  "deno.lint": true,
+  "deno.unstable": true,
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "askForPassword": true,
+      "driver": "MySQL",
+      "name": "DESKTOP-K3N0466",
+      "database": "world",
+      "username": "root",
+      "connectionTimeout": 60
+    },
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "127.0.0.1",
+      "port": 3306,
+      "askForPassword": true,
+      "driver": "MariaDB",
+      "name": "MySQL",
+      "database": "website",
+      "username": "root",
+      "connectionTimeout": 60
+    }
+  ]
+}
